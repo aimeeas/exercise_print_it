@@ -17,3 +17,18 @@ const slides = [
 	}
 ]
 
+let imageBanner = document.querySelector ("#banner .banner-img");
+
+let i = 0;
+
+let flecheGauche = document.querySelector("#banner .arrow_left");
+    flecheGauche.addEventListener("click", function () {
+        i = i - 1;
+        updateSlide(i);
+    });
+
+let flecheDroite = document.querySelector("#banner .arrow_right");
+    flecheDroite.addEventListener("click", function () {
+        i = i + 1;
+        updateSlide(i);
+    });
