@@ -106,9 +106,10 @@ header {
 
 #banner {
 	display: flex;
-	flex-direction: column;
+	/*flex-direction: column;*/
 	align-items: center;
-	justify-content: center;
+	/*justify-content: center;*/
+	justify-content: space-between;
 	width: 100%;
 	min-height: 470px;
 	position: relative;
@@ -127,17 +128,29 @@ header {
 	position: absolute;
 }
 #banner .arrow_left {
-	left: 10px;
+	/*left: 10px;*/
+	padding-left: 2%;
 }
 #banner .arrow_right {
-	right: 10px;
+	/*right: 10px;*/
+	padding-right: 2%;
 }
 /* Gestion des points du carrousel */
+
+/*Avec left: 0 et right: 0, la .dots occupe toute la largeur de
+la bannière. Du coup, le justify-content: center 
+(qui ne fonctionne que parce qu'elle est déjà en display: flex)
+pousse les points au centre.*/
+
 .dots {
 	position: absolute;
 	bottom: 40px;
+	left: 0;
+	right: 0;
 	display: flex;
+	justify-content: center;
 }
+
 .dot {
 	margin-inline: 5px;
 	width: 13px;
