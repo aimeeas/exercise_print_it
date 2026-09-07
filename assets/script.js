@@ -17,6 +17,21 @@ const slides = [
 	}
 ]
 
+const allDots = document.querySelectorAll("#banner .dot");
+
+function updateSlide (index) {
+    const slide = slides[index];
+    document.getElementById("slideImage").src = "./assets/images/slideshow/" + slide.image;
+    document.getElementById("slideTitle").innerHTML = slide.tagLine ;
+
+    allDots.forEach(function (dot) {
+        dot.classList.remove("dot_selected");
+    });
+    
+    allDots[index].classList.add("dot_selected");
+}
+
+
 let imageBanner = document.querySelector ("#banner .banner-img");
 
 let i = 0;
