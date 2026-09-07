@@ -31,7 +31,6 @@ function updateSlide (index) {
     allDots[index].classList.add("dot_selected");
 }
 
-
 let imageBanner = document.querySelector ("#banner .banner-img");
 
 let i = 0;
@@ -39,14 +38,21 @@ let i = 0;
 let flecheGauche = document.querySelector("#banner .arrow_left");
     flecheGauche.addEventListener("click", function () {
         i = i - 1;
+        if (i < 0) {
+            i = slides.length - 1;
+        }
         updateSlide(i);
     });
 
 let flecheDroite = document.querySelector("#banner .arrow_right");
     flecheDroite.addEventListener("click", function () {
         i = i + 1;
+        if (i > slides.length - 1) {
+            i = 0;
+        }
         updateSlide(i);
     });
+
 
 
 const dotsContainer = document.querySelector("#banner .dots");
@@ -60,4 +66,3 @@ for (let i = 0; i < slides.length; i++) {
 
     dotsContainer.appendChild(dot);
 }
-
