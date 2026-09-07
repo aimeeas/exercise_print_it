@@ -17,8 +17,6 @@ const slides = [
 	}
 ]
 
-const allDots = document.querySelectorAll("#banner .dot");
-
 function updateSlide (index) {
     const slide = slides[index];
     document.getElementById("slideImage").src = "./assets/images/slideshow/" + slide.image;
@@ -30,6 +28,8 @@ function updateSlide (index) {
     
     allDots[index].classList.add("dot_selected");
 }
+
+
 
 let imageBanner = document.querySelector ("#banner .banner-img");
 
@@ -66,3 +66,5 @@ for (let i = 0; i < slides.length; i++) {
 
     dotsContainer.appendChild(dot);
 }
+
+const allDots = document.querySelectorAll("#banner .dot");
